@@ -79,6 +79,19 @@ public class SinglyLinkedList {
         return size;
     }
 
+    public void removeFirst(int index){
+        Node temp;
+        Node current = first;
+        int tempIndex = 0;
+        while(tempIndex < index){
+            temp = current;
+            current = current.next;
+        }
+        temp = first;
+    }
+
+
+
 
 
 
