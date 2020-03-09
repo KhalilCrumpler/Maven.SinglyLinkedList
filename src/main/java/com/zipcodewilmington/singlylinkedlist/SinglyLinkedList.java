@@ -61,6 +61,16 @@ public class SinglyLinkedList {
         return -1;
     }
 
+    public int get(Integer index){
+        int tempIndex = 0;
+        Node current = first;
+        while(tempIndex < index){
+            current = current.next;
+            tempIndex++;
+        }
+        return current.value;
+    }
+
     public boolean contains(int item){
         return indexOf(item) != -1;
     }

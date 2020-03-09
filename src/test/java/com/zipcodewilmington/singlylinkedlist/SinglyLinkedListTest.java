@@ -50,5 +50,18 @@ public class SinglyLinkedListTest {
         Assert.assertTrue(list.contains(20));
         Assert.assertFalse(list.contains(70));
     }
+    @Test
+    public void testGet(){
+        //given
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        //when
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+        //then
+        Assert.assertEquals(30, list.get(2));
+        Assert.assertEquals(20, list.get(1));
+    }
 
 }
