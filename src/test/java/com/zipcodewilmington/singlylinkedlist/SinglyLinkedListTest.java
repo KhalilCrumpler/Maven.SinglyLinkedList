@@ -64,4 +64,34 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(20, list.get(1));
     }
 
+    @Test
+    public void testDelete(){
+        //given
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        //when
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+        list.remove(20);
+
+        System.out.println(list.contains(20));
+    }
+
+    @Test
+    public void testCopy(){
+        //given
+        SinglyLinkedList list = new SinglyLinkedList();
+
+        //when
+        list.addLast(10);
+        list.addLast(20);
+        list.addLast(30);
+        SinglyLinkedList copy = list.copy();
+
+        //then
+        Assert.assertEquals(list,copy);
+
+    }
+
 }

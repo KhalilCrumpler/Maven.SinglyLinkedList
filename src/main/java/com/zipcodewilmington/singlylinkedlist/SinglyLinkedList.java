@@ -6,12 +6,13 @@ package com.zipcodewilmington.singlylinkedlist;
  * Created by leon on 1/10/18.
  */
 public class SinglyLinkedList {
-    private class Node{
-        private int value;
-        private Node next;
+    static class Node{
+        int value;
+        Node next;
 
         public Node(int value){
             this.value = value;
+            next = null;
         }
     }
 
@@ -79,15 +80,26 @@ public class SinglyLinkedList {
         return size;
     }
 
-    public void removeFirst(int index){
-        Node temp;
+
+
+    public SinglyLinkedList copy(){
+        SinglyLinkedList copy = this;
+        return copy;
+    }
+
+    public void remove(int value){
         Node current = first;
-        int tempIndex = 0;
-        while(tempIndex < index){
-            temp = current;
+        Node second = first.next;
+        if(current.value == value){
+            current = second;
+        }
+        while(current.next != null){
+            if(current.next.value == value){
+                current.next = current.next.next;
+                return;
+            }
             current = current.next;
         }
-        temp = first;
     }
 
 
